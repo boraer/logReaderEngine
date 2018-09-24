@@ -18,6 +18,7 @@ This project was developed by using given technologies;
 * Hibernate
 * Gradle
 * AOP
+* JSON
 
 # Business Logic
 
@@ -27,7 +28,18 @@ The application works as multithreaded and sets CronTask for executing. In the B
 
 After downloading the project, it may be run as SpringBootApplication. Before runnig the application it need to be set environment variable SPRING_PROFILES_ACTIVE as test. With assigning the profile application would use the test properties.  
 
-In the code, logging mechanism is done with Spring AOP. The reader engine is run every minute once and read from the last position, The log generator engine is run very 23 seconds and generate dummy data 
+In the code, logging mechanism is done with Spring AOP. The reader engine is run every minute once and read from the last position, The log generator engine is run very 23 seconds and generate dummy data. The data is formed as Json object. 
+
+In the application.properties file it is needed to set file path correctly. It may be changed cron.reader.expression , cron.write.expression and time range parameter for calculation.
+
+# Test Case
+
+There are 4 test cases that controlling
+
+* Reading data from file
+* Writing data to file
+* Read and Process data 
+* Generate Log data and write to file
 
 ## License
 
